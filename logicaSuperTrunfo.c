@@ -40,141 +40,95 @@ int main()
 
     // Menu
     printf("******** OLÁ, BEM VINDO AO SUPER TRUNFO ********\n\n");
+    printf("ESCOLHA O PRIMEIRO ATRIBUTO  \n\n");
+    printf("1 -> POPULAÇÃO \n");
+    printf("2 -> ÁREA \n");
+    printf("3 -> PIB \n");
+    printf("4 -> NÚMERO DE PONTOS TURÍSTICOS \n");
+    printf("5 -> DENSIDADE POPULACIONAL \n\n");
 
-    printf("******** AS CARTAS SÃO FORMADAS POR CIDADES E SEUS ATRIBUTOS ********\n\n");
+    int primeiro_atributo_escolhido;
+    scanf("%d", &primeiro_atributo_escolhido);
 
-    printf("******** CADA CARTA POSSUI OS SEGUINTES ATRIBUTOS ********:\n");
-    printf("---------> PAÍS\n");
-    printf("---------> POPULAÇÃO\n");
-    printf("---------> ÁREA\n");
-    printf("---------> PIB\n");
-    printf("---------> NÚMERO DE PONTOS TURÍSTICOS\n");
-    printf("---------> DENSIDADE POPULACIONAL \n\n");
+    printf("\nAGORA ESCOLHA O SEGUNDO ATRIBUTO (diferente do primeiro)\n\n");
 
-    printf("******************** REGRAS ********************\n\n");
-    printf("CADA ATRIBUTO POSSUI UM VALOR, E O JOGADOR DEVE ESCOLHER UM ATRIBUTO PARA COMPARAÇÃO\n\n");
+    int segundo_atributo_escolhido;
+    scanf("%d", &segundo_atributo_escolhido);
 
-    printf("O JOGADOR QUE POSSUI O MAIOR VALOR NO ATRIBUTO ESCOLHIDO, VENCE A RODADA, EXCETO O ATRIBUTO DE DENSIDADE POPULACIONAL\n\n");
-
-    printf("BOA SORTE E BOM JOGO!\n\n");
-
-    printf("ESCOLHA UM ATRIBUTO \n\n");
-    printf("1 -> PAÍS \n\n");
-    printf("2 -> POPULAÇÃO \n\n");
-    printf("3 -> ÁREA \n\n");
-    printf("4 -> PIB \n\n");
-    printf("5 -> NÚMERO DE PONTOS TURÍSTICOS \n\n");
-    printf("6 -> DENSIDADE POPULACIONAL \n\n");
-    int atributo_escolhido;
-    scanf("%d", &atributo_escolhido);
-
-    // printf("O ATRIBUTO ESCOLHIDO FOI %d\n", atributo_escolhido);
-
-    switch (atributo_escolhido)
+    if (segundo_atributo_escolhido == primeiro_atributo_escolhido)
     {
-
-    case 1:
-        printf("VOCÊ ESCOLHEU O ATRIBUTO 1. ESSE ATRIBUTO APENAS EXIBE O NOME DOS PAÍSES\n");
-        printf("O PAIS DA CARTA 1 É %s \n", ct1_pais);
-        printf("O PAIS DA CARTA 2 É %s \n", ct2_pais);
-        break;
-
-    case 2:
-        printf("VOCÊ ESCOLHEU O ATRIBUTO 2 QUE REPRESENTA A POPULAÇÃO\n");
-        printf("O PAÍS DA CARTA 1 É %s, SUA POPULAÇÃO É %d\n", ct1_pais, ct1_populacao);
-        printf("O PAÍS DA CARTA 2 É %s, SUA POPULAÇÃO É %d\n", ct2_pais, ct2_populacao);
-
-        if (ct1_populacao > ct2_populacao)
-        {
-            printf("A CARTA 1 VENCEU ESSA RODADA \n");
-        }
-        else if (ct1_populacao < ct2_populacao)
-        {
-            printf("A CARTA 2 VENCEU ESSA RODADA \n");
-        }
-        else
-        {
-            printf("ESSA RODADA EMPATOU, POIS OS VALORES SÃO IGUAIS\n");
-        }
-        break;
-
-    case 3:
-        printf("VOCÊ ESCOLHEU O ATRIBUTO 3 QUE REPRESENTA A ÁREA\n");
-        printf("O PAÍS DA CARTA 1 É %s, SUA ÁREA É %.2f \n", ct1_pais, ct1_area);
-        printf("O PAÍS DA CARTA 2 É %s, SUA ÁREA É %.2f \n", ct2_pais, ct2_area);
-
-        if (ct1_area > ct2_area)
-        {
-            printf("A CARTA 1 VENCEU ESSA RODADA \n");
-        }
-        else if (ct1_area < ct2_area)
-        {
-            printf("A CARTA 2 VENCEU ESSA RODADA \n");
-        }
-        else
-        {
-            printf("ESSA RODADA EMPATOU, POIS OS VALORES SÃO IGUAIS\n");
-        }
-        break;
-
-    case 4:
-        printf("VOCÊ ESCOLHEU O ATRIBUTO 4 QUE REPRESENTA O PIB\n");
-        printf("O país da carta 1 é %s, seu PIB é %.2f \n", ct1_pais, ct1_pib_per_capita);
-        printf("O país da carta 2 é %s, seu PIB é %.2f \n", ct2_pais, ct2_pib_per_capita);
-
-        if (ct1_pib_per_capita > ct2_pib_per_capita)
-        {
-            printf("A CARTA 1 VENCEU ESSA RODADA \n");
-        }
-        else if (ct1_pib_per_capita < ct2_pib_per_capita)
-        {
-            printf("A CARTA 2 VENCEU ESSA RODADA \n");
-        }
-        else
-        {
-            printf("ESSA RODADA EMPATOU, POIS OS VALORES SÃO IGUAIS\n");
-        }
-        break;
-
-    case 5:
-        printf("VOCÊ ESCOLHEU O ATRIBUTO 5 QUE REPRESENTA O NÚMERO DE PONTOS TURÍSTICOS\n");
-        printf("O PAÍS DA CARTA 1 É %s, SEUS PONTOS TURÍSTICOS SÃO %d \n", ct1_pais, ct1_numero_pontos_turismo);
-        printf("O PAÍS DA CARTA 2 É %s, SEUS PONTOS TURÍSTICOS SÃO %d \n", ct2_pais, ct2_numero_pontos_turismo);
-
-        if (ct1_numero_pontos_turismo > ct2_numero_pontos_turismo)
-        {
-            printf("A CARTA 1 VENCEU ESSA RODADA \n");
-        }
-        else if (ct1_numero_pontos_turismo < ct2_numero_pontos_turismo)
-        {
-            printf("A CARTA 2 VENCEU ESSA RODADA \n");
-        }
-        else
-        {
-            printf("ESSA RODADA EMPATOU, POIS OS VALORES SÃO IGUAIS\n");
-        }
-        break;
-
-    case 6:
-        printf("VOCÊ ESCOLHEU O ATRIBUTO 6 QUE REPRESENTA A DENSIDADE POPULACIONAL\n");
-        printf("O PAÍS DA CARTA 1 É %s, SUA DENSIDADE POPULACIONAL É %.2f \n", ct1_pais, ct1_densidade_populacional);
-        printf("O PAÍS DA CARTA 2 É %s, SUA DENSIDADE POPULACIONAL É %.2f \n", ct2_pais, ct2_densidade_populacional);
-
-        if (ct1_densidade_populacional < ct2_densidade_populacional)
-        {
-            printf("A CARTA 1 VENCEU ESSA RODADA \n");
-        }
-        else if (ct1_densidade_populacional > ct2_densidade_populacional)
-        {
-            printf("A CARTA 2 VENCEU ESSA RODADA \n");
-        }
-        else
-        {
-            printf("ESSA RODADA EMPATOU, POIS OS VALORES SÃO IGUAIS\n");
-        }
-        break;
-
-    default:
-        printf("VOCÊ ESCOLHEU UMA OPÇÃO INVÁLIDA, POR FAVOR TENTE NOVAMENTE INFORMANDO UM VALOR ENTRE 1 E 6\n");
+        printf("\n Você não pode escolher o mesmo atributo duas vezes!\n");
+        return 0;
     }
+
+    printf("\n Primeiro atributo escolhido: %d\n", primeiro_atributo_escolhido);
+    printf("Segundo atributo escolhido: %d\n\n", segundo_atributo_escolhido);
+
+    // Variáveis para acumular os valores usados na soma
+    float valor_ct1_primeiro = 0, valor_ct2_primeiro = 0;
+    float valor_ct1_segundo = 0, valor_ct2_segundo = 0;
+
+    // ---------- PRIMEIRO ATRIBUTO ----------
+    switch (primeiro_atributo_escolhido)
+    {
+    case 1: // População
+        valor_ct1_primeiro = ct1_populacao;
+        valor_ct2_primeiro = ct2_populacao;
+        break;
+    case 2: // Área
+        valor_ct1_primeiro = ct1_area;
+        valor_ct2_primeiro = ct2_area;
+        break;
+    case 3: // PIB
+        valor_ct1_primeiro = ct1_pib;
+        valor_ct2_primeiro = ct2_pib;
+        break;
+    case 4: // Pontos turísticos
+        valor_ct1_primeiro = ct1_numero_pontos_turismo;
+        valor_ct2_primeiro = ct2_numero_pontos_turismo;
+        break;
+    case 5: // Densidade populacional (invertido → quanto menor, melhor)
+        valor_ct1_primeiro = -ct1_densidade_populacional;
+        valor_ct2_primeiro = -ct2_densidade_populacional;
+        break;
+    }
+
+    // ---------- SEGUNDO ATRIBUTO ----------
+    switch (segundo_atributo_escolhido)
+    {
+    case 1: // População
+        valor_ct1_segundo = ct1_populacao;
+        valor_ct2_segundo = ct2_populacao;
+        break;
+    case 2: // Área
+        valor_ct1_segundo = ct1_area;
+        valor_ct2_segundo = ct2_area;
+        break;
+    case 3: // PIB
+        valor_ct1_segundo = ct1_pib;
+        valor_ct2_segundo = ct2_pib;
+        break;
+    case 4: // Pontos turísticos
+        valor_ct1_segundo = ct1_numero_pontos_turismo;
+        valor_ct2_segundo = ct2_numero_pontos_turismo;
+        break;
+    case 5: // Densidade populacional (invertido)
+        valor_ct1_segundo = -ct1_densidade_populacional;
+        valor_ct2_segundo = -ct2_densidade_populacional;
+        break;
+    }
+
+    // ---------- SOMA DOS ATRIBUTOS ----------
+    float soma_ct1 = valor_ct1_primeiro + valor_ct1_segundo;
+    float soma_ct2 = valor_ct2_primeiro + valor_ct2_segundo;
+
+    printf("🔹 Soma dos atributos:\n");
+    printf("Carta 1 (%s): %.2f\n", ct1_pais, soma_ct1);
+    printf("Carta 2 (%s): %.2f\n", ct2_pais, soma_ct2);
+
+    // ---------- RESULTADO FINAL ----------
+    (soma_ct1 > soma_ct2) ? printf("\n Resultado final: Carta 1 venceu a rodada!\n") : (soma_ct2 > soma_ct1) ? printf("\n Resultado final: Carta 2 venceu a rodada!\n") : printf("\n Resultado final: Empate!\n");
+                                                                                                    
+
+    return 0;
 }
